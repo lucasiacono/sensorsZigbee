@@ -63,17 +63,17 @@ void setup()
 void loop() 
 {
 #ifdef SLEEP_PIN
-  digitalWrite(SLEEP_PIN, AWAKE);//despertamos al xbee
+  digitalWrite(SLEEP_PIN, AWAKE);//Wake up XBee
 #endif
   readSensor();
   formPayload();
   sendData(); //enviamos los datos
   receiveData(); //recibimos los datos
 #ifdef SLEEP_PIN
-  digitalWrite(SLEEP_PIN, SLEEP); //mandamos a dormir al xbee
+  digitalWrite(SLEEP_PIN, SLEEP); //XBee Sleep
 #endif
   //delay(5000);
-  enterSleep();// dormimos al arduino el tiempo recibido
+  enterSleep();// Arduino Sleep for received time
 }
 //-------------------------------------------------------------------------------------------
 /*
